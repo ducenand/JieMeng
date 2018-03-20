@@ -1,0 +1,22 @@
+{
+  "name": "jiemeng",
+  "version": "1.0.0",
+  "description": "周公解梦数据抓取保存数据中",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducenand/JieMeng.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ducenand/JieMeng/issues"
+  },
+  "homepage": "https://github.com/ducenand/JieMeng#readme",
+  "devDependencies": {
+    "eslint": "^4.19.0"
+  }
+}

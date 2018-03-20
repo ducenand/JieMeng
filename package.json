@@ -18,5 +18,10 @@
   "homepage": "https://github.com/ducenand/JieMeng#readme",
   "devDependencies": {
     "eslint": "^4.19.0"
+  },
+  "dependencies": {
+    "moment": "^2.21.0",
+    "mysql": "^2.15.0",
+    "puppeteer": "^1.2.0"
   }
 }

@@ -5,7 +5,7 @@ class Details{
 
     constructor(){
 
-
+        // 取keywords数据，如果中间有中断limit可以修改到中断的位置，继续开始
         this.sql = "SELECT * from keywords LIMIT 0,50000";
         this.addsql = "INSERT INTO details (cid,gid,kid,detail) value (?,?,?,?)";
         this.fetchArray = [];
@@ -58,11 +58,11 @@ class Details{
                 dreamDetail = dreamDetail.map((x) => {
                     return x.trim();
                 });
-            };
+            }
 
             for (let v of dreamDetail) {
                 this.fetchArray.push(this.saveToPromise(v,data));
-            };
+            }
 
             Promise
                 .all(this.fetchArray)
@@ -74,7 +74,10 @@ class Details{
                     this.fetchArray = [];
                     this.gotoPage();
                 });
-        };
+        } else {
+            console.log('----end----');
+            await browser.close();
+        }
 
 
 

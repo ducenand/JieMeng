@@ -15,12 +15,15 @@ class Keywords{
                 [obj.gid,obj.keyword,obj.cid,obj.href])
                 .then((results, fields)=>{
                     if(results.insertId) {
+                        console.log(results.insertId);
                         index++;
                         this.start(index);
                     }
 
                 });
 
+        }else {
+            console.log('----end----');
         }
 
     }

@@ -4,3 +4,4 @@ logs
 .idea
 npm-debug.log*
 .DS_Store
+src/test.js

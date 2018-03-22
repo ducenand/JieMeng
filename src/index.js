@@ -6,7 +6,9 @@ const sandClass = require('./sandClass');
     // {headless: false}
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(jmConfig.url);
+    await page.goto(jmConfig.url,{
+        timeout: 0
+    });
     console.log(`go to ${jmConfig.url}`);
     let classes = await page.evaluate(() => {
         console.log('page loading done, start fetch...');
@@ -31,17 +33,28 @@ const sandClass = require('./sandClass');
 
         });
 
-        console.log('get class start submit mysql');
+        console.log('class start submit mysql');
         console.log(classes);
 
+        const Class = new sandClass(classes);
+        Class.start();
+        await browser.close();
+
+    }else{
+        //针对没有类目的分类如：孕妇解梦
+        classes = [{
+            text: '全部',
+            href: jmConfig.url,
+            gid: jmConfig.gid
+        }];
+
+        console.log(classes);
         const Class = new sandClass(classes);
         Class.start();
 
         await browser.close();
 
-
-    }else{
-        throw Error(`get class error ${classes}`);
+        // throw Error(`get class error ${classes}`);
     }
 
 

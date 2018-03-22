@@ -1,5 +1,5 @@
-const mysql = require('./mysql');
-const jmConfig = require('./jm');
+const mysql = require('./mysql.config');
+const jmConfig = require('./jm.config');
 
 
 module.exports = {

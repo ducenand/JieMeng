@@ -4,7 +4,8 @@
   "description": "周公解梦数据抓取保存数据中",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "details": "node ./src/details.js",
+    "index": "node ./src/index.js"
   },
   "repository": {
     "type": "git",

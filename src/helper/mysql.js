@@ -1,7 +1,6 @@
 const mysql = require('mysql');
-const mysql_config = require('../config/mysql');
+const mysql_config = require('../config/mysql.config');
 const pool = mysql.createPool(mysql_config);
-// console.log(pool);
 
 const query = (sql, options) => {
     return new Promise((resolve, reject) => {
@@ -19,7 +18,7 @@ const query = (sql, options) => {
                 } else {
                     throw Error(`sql error at mysql.js con.query ${err}`);
                     reject(err);
-                };
+                }
 
             });
 
